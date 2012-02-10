@@ -78,6 +78,18 @@ class SiriProxy::Plugin::Example < SiriProxy::Plugin
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
   end
   
+  listen_for /i love/i do
+    response = ask "Who do you love?" #ask the user for something
+    
+    if(response =~ /eric/i) #process their response
+      say "Great!" 
+    else
+      say "You should say Eric!"
+    end
+    
+    request_completed #always complete your request! Otherwise the phone will "spin" at the user!
+  end
+  
   #demonstrate capturing data from the user (e.x. "Siri proxy number 15")
   listen_for /siri proxy number ([0-9,]*[0-9])/i do |number|
     say "Detected number: #{number}"
