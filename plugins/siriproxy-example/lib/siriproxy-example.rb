@@ -34,7 +34,7 @@ class SiriProxy::Plugin::Example < SiriProxy::Plugin
   end
   
   #restart siriproxy
-  listen_for /test siri proxy/i do
+  listen_for /restart siri proxy/i do
   	system 'bash ~/updatesiriproxy.sh'
     say "Siri Proxy Restarted!" #say something to the user!
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
