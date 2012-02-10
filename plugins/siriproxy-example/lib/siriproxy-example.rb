@@ -33,6 +33,13 @@ class SiriProxy::Plugin::Example < SiriProxy::Plugin
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
   end
   
+  ££restart siriproxy
+  listen_for /test siri proxy/i do
+  	system 'bash ~/updatesiriproxy.sh'
+    say "Siri Proxy Restarted!" #say something to the user!
+    request_completed #always complete your request! Otherwise the phone will "spin" at the user!
+  end
+  
   listen_for /who is baobao/i do
     say "Kong Yang!" #say something to the user!
     
