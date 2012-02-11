@@ -47,7 +47,7 @@ class SiriProxy::Plugin::Example < SiriProxy::Plugin
   end
   
   listen_for /i love you/i do
-    say "i love you too, qiyinxue!" #say something to the user!
+    say "i love you too, bao bao!" #say something to the user!
     
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
   end
